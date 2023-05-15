@@ -15,17 +15,23 @@ class Console():
     def ui(self):
         os.system(f'cls && title [DNG] Discord Nitro Generator  ^|  For Help join discord.gg/kaneki' if os.name == "nt" else "clear")
         print(center(f"""\n\n
-██████╗ ███╗   ██╗ ██████╗ 
-██╔══██╗████╗  ██║██╔════╝            ~ Discord Nitro Generator ~
-██║  ██║██╔██╗ ██║██║  ███╗     
-██║  ██║██║╚██╗██║██║   ██║     github.com/kanekiWeb ~ skulldev.ga
-██████╔╝██║ ╚████║╚██████╔╝ 
-╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ \n\n
+▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄       ▄ 
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌     ▐░▌  BİTCOİN DÜŞÜRME
+▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌     ▐░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀  ▐░▌   ▐░▌ 
+▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌▐░▌    ▐░▌     ▐░▌     ▐░▌            ▐░▌ ▐░▌  
+▐░█▄▄▄▄▄▄▄▄▄ ▐░▌   ▄   ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▌   ▐░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄    ▐░▐░▌   
+▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌     ▐░▌     ▐░░░░░░░░░░░▌    ▐░▌    
+ ▀▀▀▀▀▀▀▀▀█░▌▐░▌ ▐░▌░▌ ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▐░▌ ▐░▌     ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀    ▐░▌░▌   
+          ▐░▌▐░▌▐░▌ ▐░▌▐░▌▐░▌       ▐░▌▐░▌    ▐░▌▐░▌     ▐░▌     ▐░▌            ▐░▌ ▐░▌  
+ ▄▄▄▄▄▄▄▄▄█░▌▐░▌░▌   ▐░▐░▌▐░▌       ▐░▌▐░▌     ▐░▐░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄  ▐░▌   ▐░▌ 
+▐░░░░░░░░░░░▌▐░░▌     ▐░░▌▐░▌       ▐░▌▐░▌      ▐░░▌     ▐░▌     ▐░░░░░░░░░░░▌▐░▌     ▐░▌
+ ▀▀▀▀▀▀▀▀▀▀▀  ▀▀       ▀▀  ▀         ▀  ▀        ▀▀       ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀       ▀ 
+                                                         \n\n
               """).replace('█', Fore.CYAN+"█"+Fore.RESET).replace('~', Fore.CYAN+"~"+Fore.RESET).replace('-', Fore.CYAN+"-"+Fore.RESET))
 
     def printer(self, color, status, code):
         threading.Lock().acquire()
-        print(f"{color} {status} > {Fore.RESET}discord.gift/{code}")
+        print(f"{color} {status} > {Fore.RESET}cüzdan/{code}")
     
     def proxies_count(self):
         proxies_list = 0
@@ -67,13 +73,13 @@ class Worker():
                 except:
                     pass
             elif req.status_code == 404:
-                Console().printer(Fore.LIGHTRED_EX, "Invalid", self.code)
+                Console().printer(Fore.LIGHTRED_EX, "bulundu", self.code)
             elif req.status_code == 429:
                 # rate = (int(req.json()['retry_after']) / 1000) + 1
                 Console().printer(Fore.LIGHTBLUE_EX, "RTlimit", self.code)
                 # time.sleep(rate)
             else:
-                Console().printer(Fore.LIGHTYELLOW_EX, " Retry ", self.code)
+                Console().printer(Fore.LIGHTYELLOW_EX, " ölü ", self.code)
                   
         except KeyboardInterrupt:
             Console().ui()
@@ -87,7 +93,7 @@ class Worker():
         
 if __name__ == "__main__":
     Console().ui()
-    print(" "+Fore.CYAN + str(Console().proxies_count()) + Fore.RESET + " Total proxies loaded...\n\n")
+    print(" "+Fore.CYAN + str(Console().proxies_count()) + Fore.RESET + " yükleniyor...\n\n")
     DNG = Worker()
     
     while True:
